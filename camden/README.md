@@ -14,14 +14,21 @@ exception (the HYSPLIT smoke modeling — see *Reproduction boundary* below).
 ```
 camden/
 ├── scripts/        analysis + build scripts (run from this directory)
+├── src/            shared config/helpers for the unit-source HYSPLIT pipeline
+│                   (config.py = coords/paths, fires.py = fire windows + met,
+│                   qc.py = stuck-sensor filter)
 ├── bundle/         the reviewed visualization bundle (2026-06-02) — upstream
 │                   source the build scripts read; HTML maps + PNG charts
 ├── data/
 │   ├── raw/        committed inputs: landmark + fire-date CSVs, air_quality.xlsx,
-│   │               EPA AQS zips (aqs/), AirNow files (airnow_20260529/)
-│   └── processed/  CSVs the scripts derive from raw (regenerable)
+│   │               EPA AQS zips (aqs/), AirNow files (airnow_20260529/),
+│   │               sensors_metadata.csv, noaa/ wind, fire_events.csv
+│   └── processed/  CSVs the scripts derive from raw (regenerable) +
+│                   hysplit_footprint_*.geojson + corrected PurpleAir parquets
 ├── handoff/        the dev-team deliverable: stylized GeoJSONs + reference
 │                   renders + per-folder READMEs (rebuild from data, don't embed)
+├── tools/hysplit/  output/fire_2026-03-10/ = committed model grids (the post-run
+│                   checkpoint); met/ (HRRR, multi-GB) is gitignored
 └── output/         pipeline products (HYSPLIT geojsons/HTML/PNG) + pm25_graphs/
 ```
 
@@ -58,19 +65,45 @@ runs offline from committed inputs. No API keys are required anywhere.
 
 ## The HYSPLIT scripts
 
-`scripts/hysplit_*.py` turn raw NOAA HYSPLIT output (a `.kmz` smoke file or a
-trajectory shapefile zip) into the maps in `output/`. They each take that raw
-file as a command-line argument:
+Two distinct HYSPLIT efforts live here, with two distinct script families.
+
+**A. Trajectory / READY scripts — `scripts/hysplit_*.py`** (2025-02-21 fire).
+Turn raw NOAA HYSPLIT output (a `.kmz` smoke file or a trajectory shapefile zip)
+from a READY web submission into the maps in `output/`. Each takes that raw file
+as a command-line argument:
 
 ```bash
 python scripts/hysplit_trajectory_to_geojson.py path/to/trajectory.zip
 python scripts/hysplit_viz_static.py            path/to/trajectory.zip
 ```
 
+**B. Unit-source dispersion pipeline — `scripts/run_hysplit.py` +
+`scripts/build_hysplit_*.py`** (2026-03-10 fire; the `bundle/01b`, `02b` plume
+maps). This is the full programmatic pipeline that actually *runs* the model —
+it is the "separate pipeline" the earlier handoff referred to, now committed
+here. `src/{config,fires,qc}.py` are its only shared dependencies.
+
+```bash
+# 1. run the model: writes the CONTROL file, runs hycs_std, con2asc → ASCII grids
+#    in tools/hysplit/output/fire_2026-03-10/. Needs a local HYSPLIT install +
+#    HRRR met (see boundary below). The grids it produces are committed, so
+#    steps 2-3 run from a fresh checkout with no HYSPLIT install.
+python scripts/run_hysplit.py            --fire 2026-03-10
+# 2. ASCII grids → cumulative-footprint GeoJSONs in data/processed/
+python scripts/build_hysplit_footprint.py --fire 2026-03-10
+# 3. footprint + corrected PurpleAir + wind → the still/animated plume maps
+python scripts/build_hysplit_still.py     --fire 2026-03-10 --corrected
+python scripts/build_hysplit_animation.py --fire 2026-03-10 --corrected
+```
+
+The model is a unit-source (1,000 g/hr tracer) dispersion across four release
+heights (10/30/100/200 m AGL); output is *relative* plume shape only, never
+calibrated µg/m³ (see the modeling caveat below).
+
 ## Reproduction boundary — HYSPLIT smoke modeling
 
-Two distinct HYSPLIT efforts exist; neither regenerates from a committed raw
-input, so this is the one place "run everything" stops short:
+One step does not regenerate from a committed input — running the dispersion
+model itself, which needs software and weather data too large/external to commit:
 
 1. **`output/hysplit_*` (2025-02-21 fire, GDAS 1-deg, trajectory model)** was
    produced on 2026-03-17 by submitting a job to NOAA's **READY web service**
@@ -80,10 +113,18 @@ input, so this is the one place "run everything" stops short:
    re-submit on READY (source 39.9264, -75.1286; date 2025-02-21; GDAS 1-deg),
    download the result, then run the scripts above on it.
 
-2. **The bundle's plume maps (`bundle/01b`, `02b` — 2026-03-10 fire)** are a
-   newer, different run: HYSPLIT v5.4.2 / HRRR 3-km / unit-source tracer,
-   produced in the separate claude.ai investigation pipeline (not with the
-   `hysplit_*.py` scripts here). Regenerating these requires that pipeline.
+2. **The bundle's plume maps (`bundle/01b`, `02b` — 2026-03-10 fire)** come from
+   the family-B pipeline above. The single non-checkout step is
+   `run_hysplit.py`, which needs a local **NOAA HYSPLIT v5.4.2** install
+   (looks in `/Applications/hysplit`, `~/hysplit`, … or pass `--hysplit-dir`)
+   and the **HRRR met** it auto-downloads from the NOAA ARL archive (6-hour
+   chunks, ~3.4 GB each — gitignored under `tools/hysplit/met/`). Its output —
+   the ASCII concentration grids in `tools/hysplit/output/fire_2026-03-10/` — **is
+   committed**, so `build_hysplit_footprint/still/animation.py` regenerate the
+   footprint GeoJSONs and both plume maps from a fresh checkout with no HYSPLIT
+   install (verified: the regenerated footprint GeoJSONs are byte-identical to
+   the committed ones). To redo the model run from scratch: install HYSPLIT,
+   then `python scripts/run_hysplit.py --fire 2026-03-10`.
 
 Everything downstream of both — extracting the plume GeoJSONs, styling them,
 and all the sensor/monitor charts — reproduces from what's committed here.
