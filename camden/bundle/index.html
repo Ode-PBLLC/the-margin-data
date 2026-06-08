@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMR Camden fires — Visualization bundle</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: #f8f7f5; color: #2a2a2a;
+    margin: 0; padding: 32px;
+    line-height: 1.5;
+  }
+  .container { max-width: 880px; margin: 0 auto; }
+  h1 { margin-top: 0; font-size: 26px; color: #1a1a1a; }
+  h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;
+       color: #888; margin-top: 32px; margin-bottom: 8px; }
+  .item { background: white; border: 1px solid #ddd; border-radius: 4px;
+          padding: 16px 20px; margin: 10px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .item a { font-size: 16px; font-weight: 600; color: #c60101;
+            text-decoration: none; }
+  .item a:hover { text-decoration: underline; }
+  .meta { color: #888; font-size: 12px; margin-top: 2px; }
+  .desc { margin-top: 6px; font-size: 14px; color: #444; }
+  .note { background: #fffbed; border-left: 3px solid #d4a017;
+          padding: 10px 14px; margin: 16px 0; font-size: 13px; }
+  .footer { color: #888; font-size: 12px; margin-top: 40px; padding-top: 16px;
+            border-top: 1px solid #ddd; }
+  .pill { display: inline-block; padding: 1px 8px; border-radius: 10px;
+          font-size: 11px; font-weight: 600; margin-left: 6px; }
+  .pill.headline { background: #c60101; color: white; }
+  .pill.html { background: #e7eff7; color: #1a5f9c; }
+  .pill.png { background: #efece6; color: #6e5a1f; }
+  .pill.corrected { background: #1a5f9c; color: white; }
+  .pill.raw { background: #efece6; color: #6e5a1f; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>EMR Camden fires — visualization bundle</h1>
+  <p style="color:#666;">Investigative-journalism map and chart set for the
+  EMR Eastern scrap-metal recycling facility in Camden, NJ. Each file in this
+  bundle is self-contained — open any HTML in a browser (needs internet for
+  Leaflet + basemap tiles); open the PNGs in any image viewer.</p>
+
+  <div class="note">
+    All HTML maps require an internet connection to load Leaflet and CARTO
+    basemap tiles. The data and JavaScript are inlined, so no other files
+    need to travel with them. Cite OSM where used: "© OpenStreetMap
+    contributors."
+  </div>
+
+  <div class="note" style="border-left-color:#1a5f9c;background:#eef4fb;">
+    <b>Two versions of each headline figure are included:</b>
+    files numbered <code>01/09/10</code> use the
+    <span class="pill raw">raw uncorrected PurpleAir ATM channel</span>
+    (what we originally pulled). Files suffixed with <code>b</code> use the
+    <span class="pill corrected">EPA Barkjohn-corrected</span> values
+    (Barkjohn et al., Atmospheric Measurement Techniques 2021 — the formula
+    AirNow's Fire and Smoke Map applies). For publication, prefer the
+    corrected versions; keep the raw versions for transparency / methodology
+    notes.
+  </div>
+
+  <h2>Headline figures for the EJ piece</h2>
+
+  <div class="item">
+    <a href="01b_hysplit_still_2026-03-10_corrected.html">01b — HYSPLIT still exposure summary (corrected)</a>
+    <span class="pill headline">Headline</span>
+    <span class="pill corrected">Barkjohn-corrected</span>
+    <span class="pill html">HTML</span>
+    <div class="meta">361 KB · single static map · EPA Barkjohn formula applied</div>
+    <div class="desc">
+      <b>Recommended main figure.</b> Same layout as 01 but with the EPA Barkjohn
+      correction applied to PurpleAir. Cooper Plaza max drops from 201.7 → ~162
+      µg/m³; the gap between PurpleAir and the regulatory monitors closes
+      meaningfully. AirNow regulatory diamonds and the HYSPLIT footprint
+      polygons are unchanged.
+    </div>
+  </div>
+
+  <div class="item">
+    <a href="01_hysplit_still_2026-03-10.html">01 — HYSPLIT still exposure summary (raw)</a>
+    <span class="pill raw">Raw ATM</span>
+    <span class="pill html">HTML</span>
+    <div class="meta">352 KB · for methodology / transparency only</div>
+    <div class="desc">
+      Same view but using PurpleAir's raw uncorrected ATM channel. Useful for
+      a side-by-side comparison in the methodology section, but the
+      headline numbers should come from <b>01b</b> (corrected).
+    </div>
+  </div>
+
+  <div class="item">
+    <a href="02b_hysplit_animation_2026-03-10_corrected.html">02b — HYSPLIT animated dispersion (corrected)</a>
+    <span class="pill corrected">Barkjohn-corrected</span>
+    <span class="pill html">HTML</span>
+    <div class="meta">3.7 MB · interactive time slider · corrected PurpleAir</div>
+    <div class="desc">
+      Time-animated companion to 01b, with corrected PurpleAir readings.
+    </div>
+  </div>
+
+  <div class="item">
+    <a href="02_hysplit_animation_2026-03-10.html">02 — HYSPLIT animated dispersion (raw)</a>
+    <span class="pill raw">Raw ATM</span>
+    <span class="pill html">HTML</span>
+    <div class="meta">3.7 MB · raw PurpleAir</div>
+    <div class="desc">
+      Raw-channel version of 02b. Same caveats as 01.
+    </div>
+  </div>
+
+  <div class="item">
+    <a href="09b_all_fires_pm25_grid_adjusted.png">09b — All 14 EMR fires, primary-radius PM2.5 (corrected)</a>
+    <span class="pill corrected">Barkjohn-corrected</span>
+    <span class="pill png">PNG</span>
+    <div class="meta">363 KB · shared y-axis · EPA Barkjohn applied</div>
+    <div class="desc">
+      <b>Recommended.</b> Small-multiples scan of every fire after the correction.
+      Peaks settle to publication-defensible magnitudes; the 2025-02-21 peak
+      drops from ~1,195 to ~915 µg/m³, still Hazardous AQI.
+    </div>
+  </div>
+
+  <div class="item">
+    <a href="09_all_fires_pm25_grid.png">09 — All 14 EMR fires (raw, for transparency)</a>
+    <span class="pill raw">Raw ATM</span>
+    <span class="pill png">PNG</span>
+    <div class="meta">455 KB · raw uncorrected ATM channel</div>
+    <div class="desc">
+      Uncorrected version of 09b — keep for methodology comparison.
+    </div>
+  </div>
+
+  <div class="item">
+    <a href="10b_fire_2025-02-21_pm25_primary_adjusted.png">10b — 2025-02-21 major-fire detail (corrected)</a>
+    <span class="pill corrected">Barkjohn-corrected</span>
+    <span class="pill png">PNG</span>
+    <div class="meta">168 KB · EPA Barkjohn applied</div>
+    <div class="desc">
+      <b>Recommended.</b> Detail view of the 2/21/25 event with corrected
+      readings. Per-sensor PM2.5 over ±3 days with PHL wind direction
+      subplot below.
+    </div>
+  </div>
+
+  <div class="item">
+    <a href="10_fire_2025-02-21_pm25_primary.png">10 — 2025-02-21 detail (raw, for transparency)</a>
+    <span class="pill raw">Raw ATM</span>
+    <span class="pill png">PNG</span>
+    <div class="meta">169 KB · raw uncorrected ATM channel</div>
+    <div class="desc">
+      Uncorrected version of 10b.
+    </div>
+  </div>
+
+  <h2>Context maps</h2>
+
+  <div class="item">
+    <a href="03_receptors_and_demographics_map.html">03 — Sensitive receptors + EJScreen demographics</a>
+    <span class="pill html">HTML</span>
+    <div class="meta">9.7 MB · 11 toggleable layers + 4 demographic choropleths</div>
+    <div class="desc">
+      Who lives near EMR. Layers: NCES schools (208), CMS hospitals (10),
+      CMS nursing homes (18), and OSM-sourced daycares, clinics, senior
+      facilities, places of worship, parks, playgrounds, bus stops, train
+      stations (1,700+ points). Plus four EJScreen 2024 choropleths
+      (% low income, % people of color, % under 5, % age 65+) for 798
+      Census block groups around EMR.
+    </div>
+  </div>
+
+  <div class="item">
+    <a href="04_njdep_permitted_facilities_map.html">04 — Other NJDEP-permitted air emitters within 1 mile</a>
+    <span class="pill html">HTML</span>
+    <div class="meta">57 KB</div>
+    <div class="desc">
+      EMR's neighbors. Every NJDEP minor air-quality permitted facility
+      within 1 mile (31 of them, including another scrap yard, a cement
+      plant, a foundry, schools with permitted boilers, churches, etc.).
+      Useful for the "cumulative burden" framing.
+    </div>
+  </div>
+
+  <h2>Other fires — animations</h2>
+
+  <div class="item">
+    <a href="05_fire_2025-02-21_animated.html">05 — 2025-02-21 fire animation</a>
+    <span class="pill html">HTML</span>
+    <div class="meta">135 KB · the largest event on record</div>
+  </div>
+
+  <div class="item">
+    <a href="06_fire_2026-03-10_animated.html">06 — 2026-03-10 fire animation (early version)</a>
+    <span class="pill html">HTML</span>
+    <div class="meta">196 KB · pre-HYSPLIT version, sensor-only</div>
+  </div>
+
+  <div class="item">
+    <a href="07_fire_2022-10-18_animated.html">07 — 2022-10-18 fire animation</a>
+    <span class="pill html">HTML</span>
+    <div class="meta">58 KB · 3 sensors active at the time</div>
+  </div>
+
+  <div class="item">
+    <a href="08_fire_2026-02-26_animated.html">08 — 2026-02-26 fire animation</a>
+    <span class="pill html">HTML</span>
+    <div class="meta">198 KB</div>
+  </div>
+
+  <div class="footer">
+    Built from the
+    <code>margin_2026/camden</code>
+    investigation pipeline. Modeled plumes are
+    NOAA HYSPLIT v5.4.2 unit-source tracer simulations driven by HRRR 3-km
+    meteorology &mdash; relative concentration, not measured µg/m³. Sensor
+    readings: PurpleAir &mdash; raw <code>pm2.5_atm</code> in
+    <code>01/02/09/10</code>, EPA Barkjohn-corrected (Barkjohn et&nbsp;al.,
+    Atmos. Meas. Tech. 2021) in <code>01b/02b/09b/10b</code>; regulatory
+    sites via EPA AirNow through OpenAQ v3. Demographics: EPA EJScreen 2024
+    v2.32 via the Public Environmental Data Partners mirror on Harvard
+    Dataverse (EPA removed EJScreen from its website 2025-02-05).
+  </div>
+
+</div>
+</body>
+</html>

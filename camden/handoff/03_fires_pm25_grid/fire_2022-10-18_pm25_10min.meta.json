@@ -1,0 +1,12 @@
+{
+ "description": "PurpleAir 10-min PM2.5 around the 2022-10-18 EMR fire, 3 sensors within 5 mi of the facility. RAW uncorrected ATM channel \u2014 apply EPA Barkjohn correction before publication-facing numbers.",
+ "window": [
+  "2022-10-15T00:00:00-04:00",
+  "2022-10-21T23:50:00-04:00"
+ ],
+ "sources": [
+  "PurpleAir API (pm2.5_atm, 10-min averages) via the camden pipeline",
+  "Extracted from bundle animation 07_fire_2022-10-18_animated.html (built 2026-06-02), which inlines the pipeline data verbatim."
+ ],
+ "built_by": "camden/scripts/extract_fire_timeseries.py"
+}

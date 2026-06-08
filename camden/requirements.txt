@@ -1,0 +1,8 @@
+# Camden EMR analysis — Python deps (tested on Python 3.11)
+pandas
+numpy
+geopandas
+shapely
+folium
+matplotlib
+openpyxl   # pandas .xlsx reader, used by plot_air_quality.py

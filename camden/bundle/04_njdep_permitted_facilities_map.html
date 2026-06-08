@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b8528776dca5c976ddfc74b4e2540979 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    <div style='position: fixed; bottom: 20px; left: 20px; z-index: 9999; background: white; padding: 10px 14px; border: 1px solid #888; border-radius: 4px; font-family: sans-serif; font-size: 12px; box-shadow: 2px 2px 6px rgba(0,0,0,0.2); max-width: 340px;'><b>Within 1.0 mi of EMR: 31 facilities</b><br>&nbsp;&nbsp;<span style='color:red'>●</span> EMR (1)<br>&nbsp;&nbsp;Schools / colleges / daycare: 4<br>&nbsp;&nbsp;Religious / community: 2<br>&nbsp;&nbsp;Residential: 1<br>&nbsp;&nbsp;Other scrap / recycling / waste: 1<br>&nbsp;&nbsp;Metals / foundry / plating: 6<br>&nbsp;&nbsp;Power / gas / utilities: 3<br>&nbsp;&nbsp;Manufacturing / industrial: 5<br>&nbsp;&nbsp;Transportation / port / fuel: 2<br>&nbsp;&nbsp;Other: 6<br><br><i style='color:#666'>Source: NJDEP Minor Air Quality Permitted Facilities. Toggle categories at top-right.</i></div>
+    
+            <div class="folium-map" id="map_b8528776dca5c976ddfc74b4e2540979" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b8528776dca5c976ddfc74b4e2540979 = L.map(
+                "map_b8528776dca5c976ddfc74b4e2540979",
+                {
+                    center: [39.926309013731036, -75.12862946332181],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_b8528776dca5c976ddfc74b4e2540979);
+
+            
+
+        
+    
+            var tile_layer_fb4fea102f6cbca0f7a2eddca854ec42 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fb4fea102f6cbca0f7a2eddca854ec42.addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+            var circle_8c0230556696eda4decf6ed572cde921 = L.circle(
+                [39.926309013731036, -75.12862946332181],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.6, "radius": 804.672, "stroke": true, "weight": 1.2}
+            ).addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+        var popup_a387080b8bf5580348af0acc8a49c611 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_342eb610779fe671cf82d87b350f9a7b = $(`<div id="html_342eb610779fe671cf82d87b350f9a7b" style="width: 100.0%; height: 100.0%;">0.5 mi from EMR</div>`)[0];
+                popup_a387080b8bf5580348af0acc8a49c611.setContent(html_342eb610779fe671cf82d87b350f9a7b);
+            
+        
+
+        circle_8c0230556696eda4decf6ed572cde921.bindPopup(popup_a387080b8bf5580348af0acc8a49c611)
+        ;
+
+        
+    
+    
+            var circle_cb34a3f31fe930ff9c80f50c15f12479 = L.circle(
+                [39.926309013731036, -75.12862946332181],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.5, "radius": 1609.344, "stroke": true, "weight": 1.2}
+            ).addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+        var popup_5aace3e576f7097fd480b5f362b5ff64 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a879383b60d2e23873c9a406a99df787 = $(`<div id="html_a879383b60d2e23873c9a406a99df787" style="width: 100.0%; height: 100.0%;">1 mi from EMR</div>`)[0];
+                popup_5aace3e576f7097fd480b5f362b5ff64.setContent(html_a879383b60d2e23873c9a406a99df787);
+            
+        
+
+        circle_cb34a3f31fe930ff9c80f50c15f12479.bindPopup(popup_5aace3e576f7097fd480b5f362b5ff64)
+        ;
+
+        
+    
+    
+            var circle_ed0cb0daddd1857cc5cace51b018f1e5 = L.circle(
+                [39.926309013731036, -75.12862946332181],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.35, "radius": 1609.344, "stroke": true, "weight": 1.2}
+            ).addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+        var popup_22048a6e5f41bb1af0eb861141b31d46 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7079dea4e700bd60f60adf48e3389063 = $(`<div id="html_7079dea4e700bd60f60adf48e3389063" style="width: 100.0%; height: 100.0%;">1.0 mi from EMR</div>`)[0];
+                popup_22048a6e5f41bb1af0eb861141b31d46.setContent(html_7079dea4e700bd60f60adf48e3389063);
+            
+        
+
+        circle_ed0cb0daddd1857cc5cace51b018f1e5.bindPopup(popup_22048a6e5f41bb1af0eb861141b31d46)
+        ;
+
+        
+    
+    
+            var marker_db348614ababc45f5639e1e0ee27aa2e = L.marker(
+                [39.926309013731036, -75.12862946332181],
+                {
+}
+            ).addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+            var icon_5a5ea433f2dbd9a18cd0bc344de0f7e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_00474ef3dff3501233d222e45ce0ed07 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2bc170760f491100ca8747abbb378a6c = $(`<div id="html_2bc170760f491100ca8747abbb378a6c" style="width: 100.0%; height: 100.0%;"><b>EMR Eastern (Camden scrap yard)</b><br>Subject of investigation<br>39.926309, -75.128629</div>`)[0];
+                popup_00474ef3dff3501233d222e45ce0ed07.setContent(html_2bc170760f491100ca8747abbb378a6c);
+            
+        
+
+        marker_db348614ababc45f5639e1e0ee27aa2e.bindPopup(popup_00474ef3dff3501233d222e45ce0ed07)
+        ;
+
+        
+    
+    
+            marker_db348614ababc45f5639e1e0ee27aa2e.bindTooltip(
+                `<div>
+                     EMR Eastern (Camden scrap yard)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_db348614ababc45f5639e1e0ee27aa2e.setIcon(icon_5a5ea433f2dbd9a18cd0bc344de0f7e2);
+            
+    
+            var feature_group_6a648100b49a9e92a338ad40c8e92673 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_d594f2a4958d7d15bfb673ecc0f017de = L.marker(
+                [39.92316229950096, -75.11841202649865],
+                {
+}
+            ).addTo(feature_group_6a648100b49a9e92a338ad40c8e92673);
+        
+    
+            var icon_edc6e9801319fd35338b261057b41c68 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "graduation-cap",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a4310159126d0b54d8c76b20baffbe6e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3423763af16477a46cf3a1ec7c8934c7 = $(`<div id="html_3423763af16477a46cf3a1ec7c8934c7" style="width: 100.0%; height: 100.0%;"><b>CAMDEN CITY SCH DIST- CAMDEN CITY TRANS ACDMY</b><br><i>Elementary and Secondary Schools</i><br>1701 S 6TH ST, Camden City 08104<br><b>0.58 mi</b> from EMR</div>`)[0];
+                popup_a4310159126d0b54d8c76b20baffbe6e.setContent(html_3423763af16477a46cf3a1ec7c8934c7);
+            
+        
+
+        marker_d594f2a4958d7d15bfb673ecc0f017de.bindPopup(popup_a4310159126d0b54d8c76b20baffbe6e)
+        ;
+
+        
+    
+    
+            marker_d594f2a4958d7d15bfb673ecc0f017de.bindTooltip(
+                `<div>
+                     CAMDEN CITY SCH DIST- CAMDEN CITY TRANS ACDMY  (0.58 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d594f2a4958d7d15bfb673ecc0f017de.setIcon(icon_edc6e9801319fd35338b261057b41c68);
+            
+    
+            var marker_fce810f46cbe7a7e76fd4de5e77adcde = L.marker(
+                [39.93323274650503, -75.12141623628503],
+                {
+}
+            ).addTo(feature_group_6a648100b49a9e92a338ad40c8e92673);
+        
+    
+            var icon_326ecbedda87932bab8c74e2b666c94c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "graduation-cap",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3fe25860616ed6f6da9853499aebfbfc = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9ce878c0e9af5746a5bec3acf8630443 = $(`<div id="html_9ce878c0e9af5746a5bec3acf8630443" style="width: 100.0%; height: 100.0%;"><b>DR ULYSSES SIMPSON WIGGINS COLLEGE PREP LAB </b><br><i>Elementary and Secondary Schools</i><br>400 MT VERNON ST, Camden City 08103<br><b>0.61 mi</b> from EMR</div>`)[0];
+                popup_3fe25860616ed6f6da9853499aebfbfc.setContent(html_9ce878c0e9af5746a5bec3acf8630443);
+            
+        
+
+        marker_fce810f46cbe7a7e76fd4de5e77adcde.bindPopup(popup_3fe25860616ed6f6da9853499aebfbfc)
+        ;
+
+        
+    
+    
+            marker_fce810f46cbe7a7e76fd4de5e77adcde.bindTooltip(
+                `<div>
+                     DR ULYSSES SIMPSON WIGGINS COLLEGE PREP LAB   (0.61 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fce810f46cbe7a7e76fd4de5e77adcde.setIcon(icon_326ecbedda87932bab8c74e2b666c94c);
+            
+    
+            var marker_a6478fa7a1af159239bcd5ba1fb6ad4b = L.marker(
+                [39.939101695267745, -75.1205134975038],
+                {
+}
+            ).addTo(feature_group_6a648100b49a9e92a338ad40c8e92673);
+        
+    
+            var icon_fc9ba0283cd91c0fc938967ac99d824b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "graduation-cap",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d9a452962589bcb60b4ed8d31a80259c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3a9707f7d0d762d0582b42643893505a = $(`<div id="html_3a9707f7d0d762d0582b42643893505a" style="width: 100.0%; height: 100.0%;"><b>KIPP: COOPER NORCROSS ACADEMY AT LANNING SQUA</b><br><i>Elementary and Secondary Schools</i><br>S 5TH ST & BERKLEY ST, Camden City 08102<br><b>0.98 mi</b> from EMR</div>`)[0];
+                popup_d9a452962589bcb60b4ed8d31a80259c.setContent(html_3a9707f7d0d762d0582b42643893505a);
+            
+        
+
+        marker_a6478fa7a1af159239bcd5ba1fb6ad4b.bindPopup(popup_d9a452962589bcb60b4ed8d31a80259c)
+        ;
+
+        
+    
+    
+            marker_a6478fa7a1af159239bcd5ba1fb6ad4b.bindTooltip(
+                `<div>
+                     KIPP: COOPER NORCROSS ACADEMY AT LANNING SQUA  (0.98 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a6478fa7a1af159239bcd5ba1fb6ad4b.setIcon(icon_fc9ba0283cd91c0fc938967ac99d824b);
+            
+    
+            var marker_3105f343bad4b4df624d01aeb03b03dc = L.marker(
+                [39.93514871864876, -75.11374105608293],
+                {
+}
+            ).addTo(feature_group_6a648100b49a9e92a338ad40c8e92673);
+        
+    
+            var icon_01522d8ec72064019f2a4843bb32a6e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "graduation-cap",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2678a5534f809d89bf5d60c2268c233 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0bfdaeb13aaa93a43317f363a8b9a3da = $(`<div id="html_0bfdaeb13aaa93a43317f363a8b9a3da" style="width: 100.0%; height: 100.0%;"><b>CAMDEN CITY SCH DIST- MAINTENANCE WAREHOUSE</b><br><i>Elementary and Secondary Schools</i><br>901 S 8TH ST, Camden City 08103<br><b>1.00 mi</b> from EMR</div>`)[0];
+                popup_c2678a5534f809d89bf5d60c2268c233.setContent(html_0bfdaeb13aaa93a43317f363a8b9a3da);
+            
+        
+
+        marker_3105f343bad4b4df624d01aeb03b03dc.bindPopup(popup_c2678a5534f809d89bf5d60c2268c233)
+        ;
+
+        
+    
+    
+            marker_3105f343bad4b4df624d01aeb03b03dc.bindTooltip(
+                `<div>
+                     CAMDEN CITY SCH DIST- MAINTENANCE WAREHOUSE  (1.00 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3105f343bad4b4df624d01aeb03b03dc.setIcon(icon_01522d8ec72064019f2a4843bb32a6e6);
+            
+    
+            feature_group_6a648100b49a9e92a338ad40c8e92673.addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+            var feature_group_60ac09cc1b190609d3dc69e8eb2536b0 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_367983a3cd68223cc627643560162a58 = L.marker(
+                [39.922515040913446, -75.12034591332453],
+                {
+}
+            ).addTo(feature_group_60ac09cc1b190609d3dc69e8eb2536b0);
+        
+    
+            var icon_1d5fb709e2ac443511eecf2b9beedb4e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "church",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_83bc400f51cc4a20127c4bbf96051a4b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b8e2d8ab5e49616ecdd2477f8fab5f22 = $(`<div id="html_b8e2d8ab5e49616ecdd2477f8fab5f22" style="width: 100.0%; height: 100.0%;"><b>DOC-SACRED HEART SCHOOL</b><br><i>Religious Organizations</i><br>1739 FERRY AVE, Camden City 08104<br><b>0.51 mi</b> from EMR</div>`)[0];
+                popup_83bc400f51cc4a20127c4bbf96051a4b.setContent(html_b8e2d8ab5e49616ecdd2477f8fab5f22);
+            
+        
+
+        marker_367983a3cd68223cc627643560162a58.bindPopup(popup_83bc400f51cc4a20127c4bbf96051a4b)
+        ;
+
+        
+    
+    
+            marker_367983a3cd68223cc627643560162a58.bindTooltip(
+                `<div>
+                     DOC-SACRED HEART SCHOOL  (0.51 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_367983a3cd68223cc627643560162a58.setIcon(icon_1d5fb709e2ac443511eecf2b9beedb4e);
+            
+    
+            var marker_d36ec26760c85727b24e97187d3f99e6 = L.marker(
+                [39.935404135469376, -75.12247723829233],
+                {
+}
+            ).addTo(feature_group_60ac09cc1b190609d3dc69e8eb2536b0);
+        
+    
+            var icon_b850d62639082f581c25f75fed251624 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "church",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f3278932aaf27c855a71e8513f77399 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a30f81afa59f0487a6e59ba4ad9d60da = $(`<div id="html_a30f81afa59f0487a6e59ba4ad9d60da" style="width: 100.0%; height: 100.0%;"><b>DOC - IMMACULATE CONCEPTION -  MT CARMEL </b><br><i>Religious Organizations</i><br>832 S FOURTH ST, Camden City 08103<br><b>0.71 mi</b> from EMR</div>`)[0];
+                popup_8f3278932aaf27c855a71e8513f77399.setContent(html_a30f81afa59f0487a6e59ba4ad9d60da);
+            
+        
+
+        marker_d36ec26760c85727b24e97187d3f99e6.bindPopup(popup_8f3278932aaf27c855a71e8513f77399)
+        ;
+
+        
+    
+    
+            marker_d36ec26760c85727b24e97187d3f99e6.bindTooltip(
+                `<div>
+                     DOC - IMMACULATE CONCEPTION -  MT CARMEL   (0.71 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d36ec26760c85727b24e97187d3f99e6.setIcon(icon_b850d62639082f581c25f75fed251624);
+            
+    
+            feature_group_60ac09cc1b190609d3dc69e8eb2536b0.addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+            var feature_group_e569d5ed81206d814d321950c7c9c912 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_b91002551a1fa55763b80e6a0a53b3b2 = L.marker(
+                [39.94054107961756, -75.13003499807093],
+                {
+}
+            ).addTo(feature_group_e569d5ed81206d814d321950c7c9c912);
+        
+    
+            var icon_4ebf85ab08b172e04b292cf4fed526e1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6417ae96b6e68c1a67fa5be5d0971cf7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2145087246722da9b361243f348dad59 = $(`<div id="html_2145087246722da9b361243f348dad59" style="width: 100.0%; height: 100.0%;"><b>FREEDOM MORTGAGE PAVILION</b><br><i>Operators of Nonresidential Buildings</i><br>1 HARBOUR BLVD, Camden City 08103<br><b>0.99 mi</b> from EMR</div>`)[0];
+                popup_6417ae96b6e68c1a67fa5be5d0971cf7.setContent(html_2145087246722da9b361243f348dad59);
+            
+        
+
+        marker_b91002551a1fa55763b80e6a0a53b3b2.bindPopup(popup_6417ae96b6e68c1a67fa5be5d0971cf7)
+        ;
+
+        
+    
+    
+            marker_b91002551a1fa55763b80e6a0a53b3b2.bindTooltip(
+                `<div>
+                     FREEDOM MORTGAGE PAVILION  (0.99 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b91002551a1fa55763b80e6a0a53b3b2.setIcon(icon_4ebf85ab08b172e04b292cf4fed526e1);
+            
+    
+            feature_group_e569d5ed81206d814d321950c7c9c912.addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+            var feature_group_09c57095c91d71ce524383003458b683 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_2eebd713456a5eaba01a7d5dce2705e8 = L.marker(
+                [39.93544011898331, -75.1305516979627],
+                {
+}
+            ).addTo(feature_group_09c57095c91d71ce524383003458b683);
+        
+    
+            var icon_fb08696f5af5f8afe9757dbceb2bf9db = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bbf508b7580ca8abb28e46b16e86e332 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e178227c915e5769cb1c479384e27529 = $(`<div id="html_e178227c915e5769cb1c479384e27529" style="width: 100.0%; height: 100.0%;"><b>CAMDEN IRON & METAL INC </b><br><i>Scrap and Waste Materials</i><br>FRONT & PINE STS, Camden City 08101<br><b>0.64 mi</b> from EMR</div>`)[0];
+                popup_bbf508b7580ca8abb28e46b16e86e332.setContent(html_e178227c915e5769cb1c479384e27529);
+            
+        
+
+        marker_2eebd713456a5eaba01a7d5dce2705e8.bindPopup(popup_bbf508b7580ca8abb28e46b16e86e332)
+        ;
+
+        
+    
+    
+            marker_2eebd713456a5eaba01a7d5dce2705e8.bindTooltip(
+                `<div>
+                     CAMDEN IRON & METAL INC   (0.64 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2eebd713456a5eaba01a7d5dce2705e8.setIcon(icon_fb08696f5af5f8afe9757dbceb2bf9db);
+            
+    
+            feature_group_09c57095c91d71ce524383003458b683.addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+            var feature_group_b3a143e1cb1103cf2979916eb44b2086 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_59f332a7d3f62049c83525b0e0cf37e1 = L.marker(
+                [39.92957220674654, -75.12618654918911],
+                {
+}
+            ).addTo(feature_group_b3a143e1cb1103cf2979916eb44b2086);
+        
+    
+            var icon_3d8c724f94a2d626b3158655f5413546 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_08fe09311f41b794b46e7666b647657b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7cc8e83631c6355b41eec4263ed8062e = $(`<div id="html_7cc8e83631c6355b41eec4263ed8062e" style="width: 100.0%; height: 100.0%;"><b>WILLIAM J JONES & SONS INC</b><br><i>Other Metal Container Manufacturing</i><br>230-238 LIBERTY ST, Camden City 08104<br><b>0.26 mi</b> from EMR</div>`)[0];
+                popup_08fe09311f41b794b46e7666b647657b.setContent(html_7cc8e83631c6355b41eec4263ed8062e);
+            
+        
+
+        marker_59f332a7d3f62049c83525b0e0cf37e1.bindPopup(popup_08fe09311f41b794b46e7666b647657b)
+        ;
+
+        
+    
+    
+            marker_59f332a7d3f62049c83525b0e0cf37e1.bindTooltip(
+                `<div>
+                     WILLIAM J JONES & SONS INC  (0.26 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_59f332a7d3f62049c83525b0e0cf37e1.setIcon(icon_3d8c724f94a2d626b3158655f5413546);
+            
+    
+            var marker_6e384d00b986ca3bfa736ba5ca80bd09 = L.marker(
+                [39.92893578570359, -75.12507529743345],
+                {
+}
+            ).addTo(feature_group_b3a143e1cb1103cf2979916eb44b2086);
+        
+    
+            var icon_42f7271213044754136ce630f6761b0b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3bfa854800ef7a2d127eb67977fdb889 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d1509218757a23072301dbf48b20831b = $(`<div id="html_d1509218757a23072301dbf48b20831b" style="width: 100.0%; height: 100.0%;"><b>PEERLESS CASTINGS</b><br><i>Other Nonferrous Metal Foundries (Except Die-Casting)</i><br>250 MECHANIC ST, Camden City 08101<br><b>0.26 mi</b> from EMR</div>`)[0];
+                popup_3bfa854800ef7a2d127eb67977fdb889.setContent(html_d1509218757a23072301dbf48b20831b);
+            
+        
+
+        marker_6e384d00b986ca3bfa736ba5ca80bd09.bindPopup(popup_3bfa854800ef7a2d127eb67977fdb889)
+        ;
+
+        
+    
+    
+            marker_6e384d00b986ca3bfa736ba5ca80bd09.bindTooltip(
+                `<div>
+                     PEERLESS CASTINGS  (0.26 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6e384d00b986ca3bfa736ba5ca80bd09.setIcon(icon_42f7271213044754136ce630f6761b0b);
+            
+    
+            var marker_468be2096ae0aafe091b16b322d7e70a = L.marker(
+                [39.9322483348859, -75.12669593193777],
+                {
+}
+            ).addTo(feature_group_b3a143e1cb1103cf2979916eb44b2086);
+        
+    
+            var icon_f3a67b5dff1d2296e7767e2cd583249d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d159887b011876c4132a4fc13e1e196f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d0d9bbe7af1d567e84661544d65edd38 = $(`<div id="html_d0d9bbe7af1d567e84661544d65edd38" style="width: 100.0%; height: 100.0%;"><b>CENTRAL METALS INC</b><br><i>Other Gasoline Stations</i><br>1054 S 2ND ST, Camden City 08100<br><b>0.42 mi</b> from EMR</div>`)[0];
+                popup_d159887b011876c4132a4fc13e1e196f.setContent(html_d0d9bbe7af1d567e84661544d65edd38);
+            
+        
+
+        marker_468be2096ae0aafe091b16b322d7e70a.bindPopup(popup_d159887b011876c4132a4fc13e1e196f)
+        ;
+
+        
+    
+    
+            marker_468be2096ae0aafe091b16b322d7e70a.bindTooltip(
+                `<div>
+                     CENTRAL METALS INC  (0.42 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_468be2096ae0aafe091b16b322d7e70a.setIcon(icon_f3a67b5dff1d2296e7767e2cd583249d);
+            
+    
+            var marker_b9eb0ff94f5f794ea431c0145240ad76 = L.marker(
+                [39.93405424370749, -75.128450411207],
+                {
+}
+            ).addTo(feature_group_b3a143e1cb1103cf2979916eb44b2086);
+        
+    
+            var icon_fc7447e1e6fdaa048f0613ad6331f38e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30d61667a4f3dd906233c93e8df22073 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_28e5589b97ab79125e9abfc943c501ba = $(`<div id="html_28e5589b97ab79125e9abfc943c501ba" style="width: 100.0%; height: 100.0%;"><b>STATE METAL INDUSTRIES INC</b><br><i>Nonferrous Metal (Except Aluminum) Smelting and Refining</i><br>941 S SECOND ST, Camden City 08103<br><b>0.54 mi</b> from EMR</div>`)[0];
+                popup_30d61667a4f3dd906233c93e8df22073.setContent(html_28e5589b97ab79125e9abfc943c501ba);
+            
+        
+
+        marker_b9eb0ff94f5f794ea431c0145240ad76.bindPopup(popup_30d61667a4f3dd906233c93e8df22073)
+        ;
+
+        
+    
+    
+            marker_b9eb0ff94f5f794ea431c0145240ad76.bindTooltip(
+                `<div>
+                     STATE METAL INDUSTRIES INC  (0.54 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b9eb0ff94f5f794ea431c0145240ad76.setIcon(icon_fc7447e1e6fdaa048f0613ad6331f38e);
+            
+    
+            var marker_b010f3b4c452624769d038f199b9f404 = L.marker(
+                [39.93885298043074, -75.1274480768696],
+                {
+}
+            ).addTo(feature_group_b3a143e1cb1103cf2979916eb44b2086);
+        
+    
+            var icon_7a0356303cb8a143c8b05d584d25e1c7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6d783a2e93775b6f1428bb9d91d0e485 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_be23dfed6b55c24e5ff60e90fdc60c3c = $(`<div id="html_be23dfed6b55c24e5ff60e90fdc60c3c" style="width: 100.0%; height: 100.0%;"><b>ART METALCRAFT PLATING CO</b><br><i>Electroplating, Plating, Polishing, Anodizing, and Coloring</i><br>529 SOUTH SECOND STREET, Camden City 081030000<br><b>0.87 mi</b> from EMR</div>`)[0];
+                popup_6d783a2e93775b6f1428bb9d91d0e485.setContent(html_be23dfed6b55c24e5ff60e90fdc60c3c);
+            
+        
+
+        marker_b010f3b4c452624769d038f199b9f404.bindPopup(popup_6d783a2e93775b6f1428bb9d91d0e485)
+        ;
+
+        
+    
+    
+            marker_b010f3b4c452624769d038f199b9f404.bindTooltip(
+                `<div>
+                     ART METALCRAFT PLATING CO  (0.87 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b010f3b4c452624769d038f199b9f404.setIcon(icon_7a0356303cb8a143c8b05d584d25e1c7);
+            
+    
+            var marker_6053955798736e61e9583f18729cb729 = L.marker(
+                [39.91289425389513, -75.12155325694306],
+                {
+}
+            ).addTo(feature_group_b3a143e1cb1103cf2979916eb44b2086);
+        
+    
+            var icon_be1268af8bc0e24e3c4fec6359805620 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4dd946cbd540f6913b221eb93cdd1c7d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3afc200cc6b917c1c70bcefe27ac0d64 = $(`<div id="html_3afc200cc6b917c1c70bcefe27ac0d64" style="width: 100.0%; height: 100.0%;"><b>CAMDEN YARDS STEEL CO</b><br><i>Rolled Steel Shape Manufacturing</i><br>2500 S BROADWAY, Camden City 08104<br><b>1.00 mi</b> from EMR</div>`)[0];
+                popup_4dd946cbd540f6913b221eb93cdd1c7d.setContent(html_3afc200cc6b917c1c70bcefe27ac0d64);
+            
+        
+
+        marker_6053955798736e61e9583f18729cb729.bindPopup(popup_4dd946cbd540f6913b221eb93cdd1c7d)
+        ;
+
+        
+    
+    
+            marker_6053955798736e61e9583f18729cb729.bindTooltip(
+                `<div>
+                     CAMDEN YARDS STEEL CO  (1.00 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6053955798736e61e9583f18729cb729.setIcon(icon_be1268af8bc0e24e3c4fec6359805620);
+            
+    
+            feature_group_b3a143e1cb1103cf2979916eb44b2086.addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+            var feature_group_1e3497dba71ca63c86dd923c91dd51b2 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_1af18df097ac2beac0644e75474907e0 = L.marker(
+                [39.92447202357608, -75.12503470148418],
+                {
+}
+            ).addTo(feature_group_1e3497dba71ca63c86dd923c91dd51b2);
+        
+    
+            var icon_54b702fbf24e39a83cf41ebaad9fbc42 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_449549fad0e55664417cffce42f8f417 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_625668c87bb560c7e4b436f763ac2633 = $(`<div id="html_625668c87bb560c7e4b436f763ac2633" style="width: 100.0%; height: 100.0%;"><b>CAMDEN CNTY MUA DELAWARE #1 WPCF</b><br><i>Water, Sewage and Other Systems</i><br>200 JACKSON ST, Camden City 08101<br><b>0.23 mi</b> from EMR</div>`)[0];
+                popup_449549fad0e55664417cffce42f8f417.setContent(html_625668c87bb560c7e4b436f763ac2633);
+            
+        
+
+        marker_1af18df097ac2beac0644e75474907e0.bindPopup(popup_449549fad0e55664417cffce42f8f417)
+        ;
+
+        
+    
+    
+            marker_1af18df097ac2beac0644e75474907e0.bindTooltip(
+                `<div>
+                     CAMDEN CNTY MUA DELAWARE #1 WPCF  (0.23 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1af18df097ac2beac0644e75474907e0.setIcon(icon_54b702fbf24e39a83cf41ebaad9fbc42);
+            
+    
+            var marker_983ead84384eb2c1a7133452c9131796 = L.marker(
+                [39.93384699448247, -75.12664988686561],
+                {
+}
+            ).addTo(feature_group_1e3497dba71ca63c86dd923c91dd51b2);
+        
+    
+            var icon_3e9d05942ec71fb66bdf6faa7aa03779 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3163e0489b52b07ad75b341134f01b0a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d47edeb5295394cb62d24b359f2427b5 = $(`<div id="html_d47edeb5295394cb62d24b359f2427b5" style="width: 100.0%; height: 100.0%;"><b>PSE&G CAMDEN GAS PLANT M&R STATION</b><br><i>Electric and Other Services Combined</i><br>2ND ST & SPRUCE ST, Camden City 08105<br><b>0.53 mi</b> from EMR</div>`)[0];
+                popup_3163e0489b52b07ad75b341134f01b0a.setContent(html_d47edeb5295394cb62d24b359f2427b5);
+            
+        
+
+        marker_983ead84384eb2c1a7133452c9131796.bindPopup(popup_3163e0489b52b07ad75b341134f01b0a)
+        ;
+
+        
+    
+    
+            marker_983ead84384eb2c1a7133452c9131796.bindTooltip(
+                `<div>
+                     PSE&G CAMDEN GAS PLANT M&R STATION  (0.53 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_983ead84384eb2c1a7133452c9131796.setIcon(icon_3e9d05942ec71fb66bdf6faa7aa03779);
+            
+    
+            var marker_4d85bd5f0e6cee5b74d9c6b0e1570969 = L.marker(
+                [39.91640819336225, -75.11896361660398],
+                {
+}
+            ).addTo(feature_group_1e3497dba71ca63c86dd923c91dd51b2);
+        
+    
+            var icon_5e6a49718a7cdfe35c9476f87e0ad8cd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cdd08440c1f7b7469fa5be5f682f1a74 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_362e850cd71f7afef8004d0fc738c82f = $(`<div id="html_362e850cd71f7afef8004d0fc738c82f" style="width: 100.0%; height: 100.0%;"><b>HOSPITAL CENTRAL SERVICES INC-HCSC LAUNDRY</b><br><i>Industrial Launderers</i><br>2224 BROADWAY, Camden City 08104<br><b>0.85 mi</b> from EMR</div>`)[0];
+                popup_cdd08440c1f7b7469fa5be5f682f1a74.setContent(html_362e850cd71f7afef8004d0fc738c82f);
+            
+        
+
+        marker_4d85bd5f0e6cee5b74d9c6b0e1570969.bindPopup(popup_cdd08440c1f7b7469fa5be5f682f1a74)
+        ;
+
+        
+    
+    
+            marker_4d85bd5f0e6cee5b74d9c6b0e1570969.bindTooltip(
+                `<div>
+                     HOSPITAL CENTRAL SERVICES INC-HCSC LAUNDRY  (0.85 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4d85bd5f0e6cee5b74d9c6b0e1570969.setIcon(icon_5e6a49718a7cdfe35c9476f87e0ad8cd);
+            
+    
+            feature_group_1e3497dba71ca63c86dd923c91dd51b2.addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+            var feature_group_dac4bd9921882a718f86fbef09a22f7f = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_e714741432e10123ad6117e2fc88e164 = L.marker(
+                [39.927556284876715, -75.12684570283588],
+                {
+}
+            ).addTo(feature_group_dac4bd9921882a718f86fbef09a22f7f);
+        
+    
+            var icon_6d3f1dc9aff8b03eb347d22c8e523f6b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "cog",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_322518d440c28b17806c04ba3317bd2f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_22ab04cbb504f9c1b956f126f66be576 = $(`<div id="html_22ab04cbb504f9c1b956f126f66be576" style="width: 100.0%; height: 100.0%;"><b>PLASTIC CONSULTING & MFG CO</b><br><i>Coating, Engraving, Heat Treating, and Allied Activities</i><br>1431 FERRY AVE, Camden City 08104<br><b>0.13 mi</b> from EMR</div>`)[0];
+                popup_322518d440c28b17806c04ba3317bd2f.setContent(html_22ab04cbb504f9c1b956f126f66be576);
+            
+        
+
+        marker_e714741432e10123ad6117e2fc88e164.bindPopup(popup_322518d440c28b17806c04ba3317bd2f)
+        ;
+
+        
+    
+    
+            marker_e714741432e10123ad6117e2fc88e164.bindTooltip(
+                `<div>
+                     PLASTIC CONSULTING & MFG CO  (0.13 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e714741432e10123ad6117e2fc88e164.setIcon(icon_6d3f1dc9aff8b03eb347d22c8e523f6b);
+            
+    
+            var marker_e8ddabc57ad535beac6cffc93951d8a7 = L.marker(
+                [39.930002396463536, -75.12735656144123],
+                {
+}
+            ).addTo(feature_group_dac4bd9921882a718f86fbef09a22f7f);
+        
+    
+            var icon_397164e5fd734764dc324ed3989bf29b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "cog",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_165228490cbf719c7279f51e6dff4fd1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5ec98b93011ad742fb0db8e2bb0cb6e6 = $(`<div id="html_5ec98b93011ad742fb0db8e2bb0cb6e6" style="width: 100.0%; height: 100.0%;"><b>CARMANA DESIGNS LTD</b><br><i>Custom Architectural Woodwork and Millwork Manufacturing</i><br>200 210 KAIGHN AVE, Camden City 08102<br><b>0.26 mi</b> from EMR</div>`)[0];
+                popup_165228490cbf719c7279f51e6dff4fd1.setContent(html_5ec98b93011ad742fb0db8e2bb0cb6e6);
+            
+        
+
+        marker_e8ddabc57ad535beac6cffc93951d8a7.bindPopup(popup_165228490cbf719c7279f51e6dff4fd1)
+        ;
+
+        
+    
+    
+            marker_e8ddabc57ad535beac6cffc93951d8a7.bindTooltip(
+                `<div>
+                     CARMANA DESIGNS LTD  (0.26 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e8ddabc57ad535beac6cffc93951d8a7.setIcon(icon_397164e5fd734764dc324ed3989bf29b);
+            
+    
+            var marker_a6ad5dc046d9a70940e298ece072fc36 = L.marker(
+                [39.930563973601636, -75.1275827835376],
+                {
+}
+            ).addTo(feature_group_dac4bd9921882a718f86fbef09a22f7f);
+        
+    
+            var icon_68cfc81e688e2232dddc4f56b3bff096 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "cog",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2e74c27a98467ab59c129c28cae71860 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_04edbdb691f3a1ad616ebe2c9c0cdd06 = $(`<div id="html_04edbdb691f3a1ad616ebe2c9c0cdd06" style="width: 100.0%; height: 100.0%;"><b>NUTSCO INC</b><br><i>Roasted Nuts and Peanut Butter Manufacturing</i><br>1115 S SECOND ST, Camden City 08103<br><b>0.30 mi</b> from EMR</div>`)[0];
+                popup_2e74c27a98467ab59c129c28cae71860.setContent(html_04edbdb691f3a1ad616ebe2c9c0cdd06);
+            
+        
+
+        marker_a6ad5dc046d9a70940e298ece072fc36.bindPopup(popup_2e74c27a98467ab59c129c28cae71860)
+        ;
+
+        
+    
+    
+            marker_a6ad5dc046d9a70940e298ece072fc36.bindTooltip(
+                `<div>
+                     NUTSCO INC  (0.30 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a6ad5dc046d9a70940e298ece072fc36.setIcon(icon_68cfc81e688e2232dddc4f56b3bff096);
+            
+    
+            var marker_3d32b30cefeb7121bf945efcb91417e8 = L.marker(
+                [39.9195843012638, -75.12470145600301],
+                {
+}
+            ).addTo(feature_group_dac4bd9921882a718f86fbef09a22f7f);
+        
+    
+            var icon_40d8a6f1ad62389ccb496513c5f337a5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "cog",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16e565dbad7f80f1b3a98910345abf41 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_27fcd0195a985f752a02a68f16e97015 = $(`<div id="html_27fcd0195a985f752a02a68f16e97015" style="width: 100.0%; height: 100.0%;"><b>MAFCO WORLDWIDE CORP</b><br><i>Spice and Extract Manufacturing</i><br>3RD ST & JEFFERSON AVE, Camden City 08104<br><b>0.51 mi</b> from EMR</div>`)[0];
+                popup_16e565dbad7f80f1b3a98910345abf41.setContent(html_27fcd0195a985f752a02a68f16e97015);
+            
+        
+
+        marker_3d32b30cefeb7121bf945efcb91417e8.bindPopup(popup_16e565dbad7f80f1b3a98910345abf41)
+        ;
+
+        
+    
+    
+            marker_3d32b30cefeb7121bf945efcb91417e8.bindTooltip(
+                `<div>
+                     MAFCO WORLDWIDE CORP  (0.51 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3d32b30cefeb7121bf945efcb91417e8.setIcon(icon_40d8a6f1ad62389ccb496513c5f337a5);
+            
+    
+            var marker_bf5707ddcb5a10752f5ef5b7a275d4c8 = L.marker(
+                [39.91706339737881, -75.12482116384983],
+                {
+}
+            ).addTo(feature_group_dac4bd9921882a718f86fbef09a22f7f);
+        
+    
+            var icon_1e36e2fe3131be592b7cad081a76b90d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "cog",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d8511da46bb669a4ec91cd9b6d0d7fbe = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_da0c3242e0b9bd7f10dc2fd9c4df007f = $(`<div id="html_da0c3242e0b9bd7f10dc2fd9c4df007f" style="width: 100.0%; height: 100.0%;"><b>HEIDELBERG MATERIALS US CEMENT LLC</b><br><i>Minerals and Earths, Ground or Otherwise Treated</i><br>595 MORGAN BLVD, Camden City 08104<br><b>0.67 mi</b> from EMR</div>`)[0];
+                popup_d8511da46bb669a4ec91cd9b6d0d7fbe.setContent(html_da0c3242e0b9bd7f10dc2fd9c4df007f);
+            
+        
+
+        marker_bf5707ddcb5a10752f5ef5b7a275d4c8.bindPopup(popup_d8511da46bb669a4ec91cd9b6d0d7fbe)
+        ;
+
+        
+    
+    
+            marker_bf5707ddcb5a10752f5ef5b7a275d4c8.bindTooltip(
+                `<div>
+                     HEIDELBERG MATERIALS US CEMENT LLC  (0.67 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bf5707ddcb5a10752f5ef5b7a275d4c8.setIcon(icon_1e36e2fe3131be592b7cad081a76b90d);
+            
+    
+            feature_group_dac4bd9921882a718f86fbef09a22f7f.addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+            var feature_group_f77c248a7551fa0811731c3f6ef42d1a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_68caaa0577d7627ef9a470917703a414 = L.marker(
+                [39.93319966191828, -75.1199038685214],
+                {
+}
+            ).addTo(feature_group_f77c248a7551fa0811731c3f6ef42d1a);
+        
+    
+            var icon_5e36be6179d277d9bb78c20a899d1f51 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "truck",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_725ffd09f6a9b66f6416f052628ab09e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_52ffc85784ba9bd0fff8445a98e916f5 = $(`<div id="html_52ffc85784ba9bd0fff8445a98e916f5" style="width: 100.0%; height: 100.0%;"><b>NEWTON EASTCOAST</b><br><i>Gasoline Stations</i><br>1013 NEWTON AVE, Camden City 08103<br><b>0.66 mi</b> from EMR</div>`)[0];
+                popup_725ffd09f6a9b66f6416f052628ab09e.setContent(html_52ffc85784ba9bd0fff8445a98e916f5);
+            
+        
+
+        marker_68caaa0577d7627ef9a470917703a414.bindPopup(popup_725ffd09f6a9b66f6416f052628ab09e)
+        ;
+
+        
+    
+    
+            marker_68caaa0577d7627ef9a470917703a414.bindTooltip(
+                `<div>
+                     NEWTON EASTCOAST  (0.66 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_68caaa0577d7627ef9a470917703a414.setIcon(icon_5e36be6179d277d9bb78c20a899d1f51);
+            
+    
+            var marker_05e9075c0a6600ce0c0b9f9d624023ad = L.marker(
+                [39.93760772453266, -75.12976914660925],
+                {
+}
+            ).addTo(feature_group_f77c248a7551fa0811731c3f6ef42d1a);
+        
+    
+            var icon_4ffacba4bcf37044bef96e525a140653 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "truck",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_02c38619f83656ed70db8c67ec08914a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bdc1f99f778fed37ea9968415249add3 = $(`<div id="html_bdc1f99f778fed37ea9968415249add3" style="width: 100.0%; height: 100.0%;"><b>SOUTH JERSEY PORT CORP BALZANO MARINE TERMINA</b><br><i>Railroad Switching and Terminal Establishments</i><br>101 JOSEPH A BALZANO BLVD, Camden City 08103<br><b>0.78 mi</b> from EMR</div>`)[0];
+                popup_02c38619f83656ed70db8c67ec08914a.setContent(html_bdc1f99f778fed37ea9968415249add3);
+            
+        
+
+        marker_05e9075c0a6600ce0c0b9f9d624023ad.bindPopup(popup_02c38619f83656ed70db8c67ec08914a)
+        ;
+
+        
+    
+    
+            marker_05e9075c0a6600ce0c0b9f9d624023ad.bindTooltip(
+                `<div>
+                     SOUTH JERSEY PORT CORP BALZANO MARINE TERMINA  (0.78 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_05e9075c0a6600ce0c0b9f9d624023ad.setIcon(icon_4ffacba4bcf37044bef96e525a140653);
+            
+    
+            feature_group_f77c248a7551fa0811731c3f6ef42d1a.addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+            var feature_group_264b7867732d87f009e17e64bcce11d8 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_2d6f6f25e2466dfd25aa73cbfd7a3196 = L.marker(
+                [39.92708349301509, -75.12746185366653],
+                {
+}
+            ).addTo(feature_group_264b7867732d87f009e17e64bcce11d8);
+        
+    
+            var icon_c95bbb494d7239c3af0ba33bb9380865 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8cd164abd7cb439c9fa75650d6d0013a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a3a49b1166e7072b1a53e72aac09f2dd = $(`<div id="html_a3a49b1166e7072b1a53e72aac09f2dd" style="width: 100.0%; height: 100.0%;"><b>BLDG J - VEHICLE GREENING/RECYCLING</b><br><i></i><br>100 ATLANTIC AVE FRONT ST & ATLA, Camden City 08103<br><b>0.08 mi</b> from EMR</div>`)[0];
+                popup_8cd164abd7cb439c9fa75650d6d0013a.setContent(html_a3a49b1166e7072b1a53e72aac09f2dd);
+            
+        
+
+        marker_2d6f6f25e2466dfd25aa73cbfd7a3196.bindPopup(popup_8cd164abd7cb439c9fa75650d6d0013a)
+        ;
+
+        
+    
+    
+            marker_2d6f6f25e2466dfd25aa73cbfd7a3196.bindTooltip(
+                `<div>
+                     BLDG J - VEHICLE GREENING/RECYCLING  (0.08 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2d6f6f25e2466dfd25aa73cbfd7a3196.setIcon(icon_c95bbb494d7239c3af0ba33bb9380865);
+            
+    
+            var marker_0497c3f9d13efba571e924b3f49c49ef = L.marker(
+                [39.93148044584758, -75.12665683383307],
+                {
+}
+            ).addTo(feature_group_264b7867732d87f009e17e64bcce11d8);
+        
+    
+            var icon_c16e049ea71152688cdd1b522ac83abb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b4a6e1b96ca63c5fff9be28a31e64919 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_13f7b2c13080e2b8ae5ff592d6c531c6 = $(`<div id="html_13f7b2c13080e2b8ae5ff592d6c531c6" style="width: 100.0%; height: 100.0%;"><b>ALLIED SALT LLC</b><br><i>Other Miscellaneous Nondurable Goods Merchant Wholesalers</i><br>1101 S 2ND ST, Camden City 08103<br><b>0.37 mi</b> from EMR</div>`)[0];
+                popup_b4a6e1b96ca63c5fff9be28a31e64919.setContent(html_13f7b2c13080e2b8ae5ff592d6c531c6);
+            
+        
+
+        marker_0497c3f9d13efba571e924b3f49c49ef.bindPopup(popup_b4a6e1b96ca63c5fff9be28a31e64919)
+        ;
+
+        
+    
+    
+            marker_0497c3f9d13efba571e924b3f49c49ef.bindTooltip(
+                `<div>
+                     ALLIED SALT LLC  (0.37 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0497c3f9d13efba571e924b3f49c49ef.setIcon(icon_c16e049ea71152688cdd1b522ac83abb);
+            
+    
+            var marker_c18ab6f839480a020846dafe64418894 = L.marker(
+                [39.92030293981755, -75.12380234166356],
+                {
+}
+            ).addTo(feature_group_264b7867732d87f009e17e64bcce11d8);
+        
+    
+            var icon_89d99d75eb3fd2c8b5b6bcae2214a3a1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae5609dbcb7482c5acc74f5216c9276e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_68a0aacdd19a00032ec3e62c92feddd9 = $(`<div id="html_68a0aacdd19a00032ec3e62c92feddd9" style="width: 100.0%; height: 100.0%;"><b>INDUSTRIAL CONTAINER SERVICES LLC</b><br><i>Repair Shops and Related Services, NEC</i><br>267 JEFFERSON ST, Camden City 08104<br><b>0.49 mi</b> from EMR</div>`)[0];
+                popup_ae5609dbcb7482c5acc74f5216c9276e.setContent(html_68a0aacdd19a00032ec3e62c92feddd9);
+            
+        
+
+        marker_c18ab6f839480a020846dafe64418894.bindPopup(popup_ae5609dbcb7482c5acc74f5216c9276e)
+        ;
+
+        
+    
+    
+            marker_c18ab6f839480a020846dafe64418894.bindTooltip(
+                `<div>
+                     INDUSTRIAL CONTAINER SERVICES LLC  (0.49 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c18ab6f839480a020846dafe64418894.setIcon(icon_89d99d75eb3fd2c8b5b6bcae2214a3a1);
+            
+    
+            var marker_ebd65454866418af2fa0db0610a84c1a = L.marker(
+                [39.92016088635813, -75.12162608420962],
+                {
+}
+            ).addTo(feature_group_264b7867732d87f009e17e64bcce11d8);
+        
+    
+            var icon_cf3baed664fbc97e17b1bcb67c937004 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f096554e4aea7719eec89d77cfd695e5 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8a670ab3bcf782d24846b0127495bb82 = $(`<div id="html_8a670ab3bcf782d24846b0127495bb82" style="width: 100.0%; height: 100.0%;"><b>F&R PALLETS INC T/A J&R PALLETS</b><br><i></i><br>1929 S 4TH ST, Camden City 08104<br><b>0.56 mi</b> from EMR</div>`)[0];
+                popup_f096554e4aea7719eec89d77cfd695e5.setContent(html_8a670ab3bcf782d24846b0127495bb82);
+            
+        
+
+        marker_ebd65454866418af2fa0db0610a84c1a.bindPopup(popup_f096554e4aea7719eec89d77cfd695e5)
+        ;
+
+        
+    
+    
+            marker_ebd65454866418af2fa0db0610a84c1a.bindTooltip(
+                `<div>
+                     F&R PALLETS INC T/A J&R PALLETS  (0.56 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ebd65454866418af2fa0db0610a84c1a.setIcon(icon_cf3baed664fbc97e17b1bcb67c937004);
+            
+    
+            var marker_d25fa7a779140bd483d001ae1e87af26 = L.marker(
+                [39.937414620043626, -75.1238471255023],
+                {
+}
+            ).addTo(feature_group_264b7867732d87f009e17e64bcce11d8);
+        
+    
+            var icon_2c33bebcee982236d781e3e16484f6af = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f5a0e6201f93659562f321d9202a241 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d5c3092bc393ed102927ccf6fe347598 = $(`<div id="html_d5c3092bc393ed102927ccf6fe347598" style="width: 100.0%; height: 100.0%;"><b>101 BECKETT H & FS</b><br><i></i><br>101 BECKETT ST, Camden City 081033311<br><b>0.81 mi</b> from EMR</div>`)[0];
+                popup_7f5a0e6201f93659562f321d9202a241.setContent(html_d5c3092bc393ed102927ccf6fe347598);
+            
+        
+
+        marker_d25fa7a779140bd483d001ae1e87af26.bindPopup(popup_7f5a0e6201f93659562f321d9202a241)
+        ;
+
+        
+    
+    
+            marker_d25fa7a779140bd483d001ae1e87af26.bindTooltip(
+                `<div>
+                     101 BECKETT H & FS  (0.81 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d25fa7a779140bd483d001ae1e87af26.setIcon(icon_2c33bebcee982236d781e3e16484f6af);
+            
+    
+            var marker_ead55007de51f2b927ef50b6be5a10ad = L.marker(
+                [39.935518813951916, -75.11888645046439],
+                {
+}
+            ).addTo(feature_group_264b7867732d87f009e17e64bcce11d8);
+        
+    
+            var icon_84e59f73484c135bc0c78323bf8151cd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_239d719a237b27bf53c2ce553517f339 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0c208544c5540e765506f120c326267e = $(`<div id="html_0c208544c5540e765506f120c326267e" style="width: 100.0%; height: 100.0%;"><b>MI CASITA DAY CARE CENTER</b><br><i></i><br>551 SPRUCE ST, Camden City 081030810<br><b>0.82 mi</b> from EMR</div>`)[0];
+                popup_239d719a237b27bf53c2ce553517f339.setContent(html_0c208544c5540e765506f120c326267e);
+            
+        
+
+        marker_ead55007de51f2b927ef50b6be5a10ad.bindPopup(popup_239d719a237b27bf53c2ce553517f339)
+        ;
+
+        
+    
+    
+            marker_ead55007de51f2b927ef50b6be5a10ad.bindTooltip(
+                `<div>
+                     MI CASITA DAY CARE CENTER  (0.82 mi)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ead55007de51f2b927ef50b6be5a10ad.setIcon(icon_84e59f73484c135bc0c78323bf8151cd);
+            
+    
+            feature_group_264b7867732d87f009e17e64bcce11d8.addTo(map_b8528776dca5c976ddfc74b4e2540979);
+        
+    
+            var layer_control_3366af369e949f0dac343535c96583c5_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_fb4fea102f6cbca0f7a2eddca854ec42,
+                },
+                overlays :  {
+                    "Schools / colleges / daycare" : feature_group_6a648100b49a9e92a338ad40c8e92673,
+                    "Religious / community" : feature_group_60ac09cc1b190609d3dc69e8eb2536b0,
+                    "Residential" : feature_group_e569d5ed81206d814d321950c7c9c912,
+                    "Other scrap / recycling / waste" : feature_group_09c57095c91d71ce524383003458b683,
+                    "Metals / foundry / plating" : feature_group_b3a143e1cb1103cf2979916eb44b2086,
+                    "Power / gas / utilities" : feature_group_1e3497dba71ca63c86dd923c91dd51b2,
+                    "Manufacturing / industrial" : feature_group_dac4bd9921882a718f86fbef09a22f7f,
+                    "Transportation / port / fuel" : feature_group_f77c248a7551fa0811731c3f6ef42d1a,
+                    "Other" : feature_group_264b7867732d87f009e17e64bcce11d8,
+                },
+            };
+            let layer_control_3366af369e949f0dac343535c96583c5 = L.control.layers(
+                layer_control_3366af369e949f0dac343535c96583c5_layers.base_layers,
+                layer_control_3366af369e949f0dac343535c96583c5_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_b8528776dca5c976ddfc74b4e2540979);
+
+        
+</script>
+</html>

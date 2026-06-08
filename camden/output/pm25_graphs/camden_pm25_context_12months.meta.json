@@ -1,0 +1,7 @@
+{
+ "description": "Daily-mean regulatory PM2.5, 12-month window, EMR fires marked.",
+ "sources": [
+  "EPA AQS daily_88101_2024.zip + daily_88101_2025.zip, Camden County sites"
+ ],
+ "built_by": "camden/scripts/build_pm25_graphs.py"
+}

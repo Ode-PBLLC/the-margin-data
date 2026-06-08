@@ -1,0 +1,7 @@
+{
+ "description": "Hourly South Camden regulatory PM2.5, 1-month window around the 2/21/25 fire.",
+ "sources": [
+  "EPA AQS hourly_88101_2025.zip, site 34-007-0010"
+ ],
+ "built_by": "camden/scripts/build_pm25_graphs.py"
+}
