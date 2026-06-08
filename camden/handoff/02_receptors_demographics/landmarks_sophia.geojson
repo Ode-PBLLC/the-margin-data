@@ -1,0 +1,491 @@
+{
+ "type": "FeatureCollection",
+ "name": "landmarks_sophia",
+ "x_description": "Curated neighborhood landmarks for the Camden EMR map, provided by the reporter (2026-06-05): EMR sites, major air permittees, sensitive receptors, neighborhood assets, narrative locations. This layer + EJScreen demographics replace the bulk OSM receptor layers. The resident home is generalized — see location_treatment.",
+ "x_sources": [
+  "Reporter-provided landmarks CSV (Sophia, 2026-06-05): 'Camden story items for Ode - Landmarks in the neighborhood.csv' — DRAFT; significance text and evacuation claims trace to her sourcing.",
+  "Geocoding: US Census Bureau geocoder (Public_AR_Current benchmark); Nominatim/OSM fallback where noted per-feature."
+ ],
+ "x_built_by": "camden/scripts/build_landmarks.py",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.12,
+     39.923
+    ]
+   },
+   "properties": {
+    "name": "Felicia Biles & Christina Allen's home",
+    "category": "Resident home",
+    "type_raw": "Resident home",
+    "significance": "Home of resident sources (currently lede anecdote). EXACT ADDRESS REDACTED from this committed copy at ~block level — mask / clear with sources before any publication. Original address held outside the repo.",
+    "icon": {
+     "markerColor": "gray",
+     "icon": "home",
+     "iconColor": "white"
+    },
+    "color_hex": "#888888",
+    "geocode_source": "coordinates provided in reporter CSV",
+    "approximate": true,
+    "location_treatment": "GENERALIZED — coordinates rounded to ~100 m. Do not publish a more precise location; masking approach pending sign-off from reporter and sources (per reporter CSV note).",
+    "distance_mi_from_emr_shredder": 0.51
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.120977512965,
+     39.922218770891
+    ]
+   },
+   "properties": {
+    "name": "Sacred Heart Elementary School",
+    "category": "Sensitive receptor",
+    "type_raw": "Sensitive receptor",
+    "significance": "Elementary school near EMR's waterfront complex. Had to evacuate during Jan. 2021 fire.",
+    "address_raw": "421 Jasper St, Camden, NJ 08104",
+    "icon": {
+     "markerColor": "blue",
+     "icon": "child",
+     "iconColor": "white"
+    },
+    "color_hex": "#2c5f7c",
+    "geocode_source": "US Census Bureau geocoder (Public_AR_Current)",
+    "distance_mi_from_emr_shredder": 0.49
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.125537066549,
+     39.930365157967
+    ]
+   },
+   "properties": {
+    "name": "Neighborhood Center",
+    "category": "Sensitive receptor",
+    "type_raw": "Sensitive receptor",
+    "significance": "Nonprofit that hosts childcare center, afterschool program, etc.",
+    "address_raw": "278 Kaighns Ave, Camden, NJ 08103",
+    "icon": {
+     "markerColor": "blue",
+     "icon": "child",
+     "iconColor": "white"
+    },
+    "color_hex": "#2c5f7c",
+    "geocode_source": "US Census Bureau geocoder (Public_AR_Current)",
+    "distance_mi_from_emr_shredder": 0.32
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.1078124,
+     39.9194032
+    ]
+   },
+   "properties": {
+    "name": "Center for Environmental Transformation",
+    "category": "Neighborhood asset",
+    "type_raw": "Neighborhood asset / character",
+    "significance": "Environmental nonprofit that sued EMR and NJ Department of Environmental Protection",
+    "address_raw": "1729 Ferry Ave, Camden, NJ 08104",
+    "icon": {
+     "markerColor": "green",
+     "icon": "heart",
+     "iconColor": "white"
+    },
+    "color_hex": "#5b8c5a",
+    "geocode_source": "Nominatim/OSM geocoder — verify before publication",
+    "distance_mi_from_emr_shredder": 1.2
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.121101691297,
+     39.921592235062
+    ]
+   },
+   "properties": {
+    "name": "Community garden",
+    "category": "Neighborhood asset",
+    "type_raw": "Neighborhood asset",
+    "significance": "Garden run by Center for Environmental Transformation",
+    "address_raw": "415 Emerald St, Camden, NJ 08104",
+    "icon": {
+     "markerColor": "green",
+     "icon": "heart",
+     "iconColor": "white"
+    },
+    "color_hex": "#5b8c5a",
+    "geocode_source": "US Census Bureau geocoder (Public_AR_Current)",
+    "distance_mi_from_emr_shredder": 0.52
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.121782,
+     39.922204
+    ]
+   },
+   "properties": {
+    "name": "Liney Ditch Park",
+    "category": "Neighborhood asset",
+    "type_raw": "Neighborhood asset / sensitive receptor",
+    "significance": "Park where students at Sacred Heart Elementary School play",
+    "address_raw": "Roughly 39.922204, -75.121782",
+    "icon": {
+     "markerColor": "green",
+     "icon": "heart",
+     "iconColor": "white"
+    },
+    "color_hex": "#5b8c5a",
+    "geocode_source": "coordinates provided in reporter CSV",
+    "approximate": true,
+    "distance_mi_from_emr_shredder": 0.46
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.1078124,
+     39.9194032
+    ]
+   },
+   "properties": {
+    "name": "Camden County Municipal Utilities Authority",
+    "category": "Industrial polluter",
+    "type_raw": "Industrial pollutor",
+    "significance": "Sewage treatment plant with a major air pollution permit, occasional source of odor in the neighborhood. Was almost damaged during Feb. 2025 fire. Hosts EPA air monitor.",
+    "address_raw": "1645 Ferry Ave, Camden, NJ 08104",
+    "icon": {
+     "markerColor": "darkpurple",
+     "icon": "cloud",
+     "iconColor": "white"
+    },
+    "color_hex": "#5b3256",
+    "geocode_source": "Nominatim/OSM geocoder — verify before publication",
+    "distance_mi_from_emr_shredder": 1.2
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.118565830409,
+     39.928793011124
+    ]
+   },
+   "properties": {
+    "name": "Joseph's House",
+    "category": "Sensitive receptor",
+    "type_raw": "Sensitive receptor",
+    "significance": "Homeless shelter",
+    "address_raw": "555 Atlantic Avenue Camden, NJ 08104",
+    "icon": {
+     "markerColor": "blue",
+     "icon": "child",
+     "iconColor": "white"
+    },
+    "color_hex": "#2c5f7c",
+    "geocode_source": "US Census Bureau geocoder (Public_AR_Current)",
+    "distance_mi_from_emr_shredder": 0.56
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.119732729984,
+     39.921730390487
+    ]
+   },
+   "properties": {
+    "name": "Camden FireWorks",
+    "category": "Neighborhood asset",
+    "type_raw": "Neighborhood asset",
+    "significance": "Arts nonprofit that houses Hope Mead's pottery studio and the quilting circle that Felicia Biles attends",
+    "address_raw": "1813 Broadway, Camden, NJ 08104",
+    "icon": {
+     "markerColor": "green",
+     "icon": "heart",
+     "iconColor": "white"
+    },
+    "color_hex": "#5b8c5a",
+    "geocode_source": "US Census Bureau geocoder (Public_AR_Current)",
+    "distance_mi_from_emr_shredder": 0.57
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.119735675995,
+     39.921326987413
+    ]
+   },
+   "properties": {
+    "name": "Golden Wok Chinese Restaurant",
+    "category": "Neighborhood asset",
+    "type_raw": "Neighborhood asset / plot point",
+    "significance": "Restaurant where Christina Allen picked up food during Jan. 2021 fire.",
+    "address_raw": "1839 Broadway, Camden, NJ 08104",
+    "icon": {
+     "markerColor": "green",
+     "icon": "heart",
+     "iconColor": "white"
+    },
+    "color_hex": "#5b8c5a",
+    "geocode_source": "US Census Bureau geocoder (Public_AR_Current)",
+    "distance_mi_from_emr_shredder": 0.58
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.11866078618,
+     39.920531215897
+    ]
+   },
+   "properties": {
+    "name": "Porter's Daughters' Garden",
+    "category": "Neighborhood asset",
+    "type_raw": "Neighborhood asset / character",
+    "significance": "Pollinator garden created by Portia Simmons",
+    "address_raw": "1920 Filmore St, Camden, NJ 08104",
+    "icon": {
+     "markerColor": "green",
+     "icon": "heart",
+     "iconColor": "white"
+    },
+    "color_hex": "#5b8c5a",
+    "geocode_source": "US Census Bureau geocoder (Public_AR_Current)",
+    "distance_mi_from_emr_shredder": 0.66
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.117663552094,
+     39.928074244225
+    ]
+   },
+   "properties": {
+    "name": "EMR 6th street",
+    "category": "EMR",
+    "type_raw": "EMR",
+    "significance": "EMR's consumer-facing scrapyard where they purchase scrap from peddlers, contractors, etc.",
+    "address_raw": "1500 S 6th St, Camden, NJ 08104",
+    "icon": {
+     "markerColor": "red",
+     "icon": "industry",
+     "iconColor": "white"
+    },
+    "color_hex": "#c60101",
+    "geocode_source": "US Census Bureau geocoder (Public_AR_Current)",
+    "distance_mi_from_emr_shredder": 0.59
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.119589606159,
+     39.921227751718
+    ]
+   },
+   "properties": {
+    "name": "Heart of Camden",
+    "category": "Neighborhood asset",
+    "type_raw": "Neighborhood asset / character",
+    "significance": "Nonprofit that helped communicate emergency information to residents during some fires; director helped negotiate City's memorandum of understanding with EMR",
+    "address_raw": "1840 Broadway, Camden, NJ 08104",
+    "icon": {
+     "markerColor": "green",
+     "icon": "heart",
+     "iconColor": "white"
+    },
+    "color_hex": "#5b8c5a",
+    "geocode_source": "US Census Bureau geocoder (Public_AR_Current)",
+    "distance_mi_from_emr_shredder": 0.59
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.12872183298,
+     39.928762319811
+    ]
+   },
+   "properties": {
+    "name": "EMR shredder",
+    "category": "EMR",
+    "type_raw": "EMR",
+    "significance": "EMR's scrap metal shredding facility, where the bulk of the recent fires have occurred.",
+    "address_raw": "1400 S. Front Street, Camden, NJ 08104",
+    "icon": {
+     "markerColor": "red",
+     "icon": "industry",
+     "iconColor": "white"
+    },
+    "color_hex": "#c60101",
+    "geocode_source": "US Census Bureau geocoder (Public_AR_Current)",
+    "distance_mi_from_emr_shredder": 0.17
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.1078124,
+     39.9194032
+    ]
+   },
+   "properties": {
+    "name": "My Auto Store",
+    "category": "EMR",
+    "type_raw": "EMR",
+    "significance": null,
+    "address_raw": "1466 Ferry Ave, Camden, NJ 08104 (also ID'd as 100 Atlantic Ave.)",
+    "icon": {
+     "markerColor": "red",
+     "icon": "industry",
+     "iconColor": "white"
+    },
+    "color_hex": "#c60101",
+    "alt_address_note": "also ID'd as 100 Atlantic Ave.",
+    "geocode_source": "Nominatim/OSM geocoder — verify before publication",
+    "distance_mi_from_emr_shredder": 1.2
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.128584457598,
+     39.927993651125
+    ]
+   },
+   "properties": {
+    "name": "Kaighn Avenue Facility",
+    "category": "EMR",
+    "type_raw": "EMR",
+    "significance": null,
+    "address_raw": "1229 S. Front Street, Camden, NJ 08104",
+    "icon": {
+     "markerColor": "red",
+     "icon": "industry",
+     "iconColor": "white"
+    },
+    "color_hex": "#c60101",
+    "geocode_source": "US Census Bureau geocoder (Public_AR_Current)",
+    "distance_mi_from_emr_shredder": 0.12
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.12863888888889,
+     39.936
+    ]
+   },
+   "properties": {
+    "name": "Pier Facility",
+    "category": "EMR",
+    "type_raw": "EMR",
+    "significance": null,
+    "address_raw": "Roughly 39°56'09.6\"N 75°07'43.1\"W",
+    "icon": {
+     "markerColor": "red",
+     "icon": "industry",
+     "iconColor": "white"
+    },
+    "color_hex": "#c60101",
+    "geocode_source": "coordinates provided in reporter CSV",
+    "approximate": true,
+    "distance_mi_from_emr_shredder": 0.67
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.129266899443,
+     39.931635046916
+    ]
+   },
+   "properties": {
+    "name": "Georgia-Pacific Gypsum",
+    "category": "Industrial polluter",
+    "type_raw": "Industrial pollutor",
+    "significance": "Gypsum manufacturing plant, holds a major air pollution permit",
+    "address_raw": "1101 S Front St, Camden, NJ 08103",
+    "icon": {
+     "markerColor": "darkpurple",
+     "icon": "cloud",
+     "iconColor": "white"
+    },
+    "color_hex": "#5b3256",
+    "geocode_source": "US Census Bureau geocoder (Public_AR_Current)",
+    "distance_mi_from_emr_shredder": 0.37
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.117361547353,
+     39.912585645321
+    ]
+   },
+   "properties": {
+    "name": "Reworld",
+    "category": "Industrial polluter",
+    "type_raw": "Industrial pollutor",
+    "significance": "Trash incinerator, holds a major air pollution permit",
+    "address_raw": "600 Morgan St, Camden, NJ 08104",
+    "icon": {
+     "markerColor": "darkpurple",
+     "icon": "cloud",
+     "iconColor": "white"
+    },
+    "color_hex": "#5b3256",
+    "geocode_source": "US Census Bureau geocoder (Public_AR_Current)",
+    "distance_mi_from_emr_shredder": 1.12
+   }
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+Name,Address or lat/long,Significance,"Type (not necessarily for publication, but we could work on categories if we wanted that)"
+Felicia Biles & Christina Allen's home,"Roughly 39.923, -75.120",Home of resident sources (currently lede anecdote). EXACT ADDRESS REDACTED from this committed copy at ~block level — mask / clear with sources before any publication. Original address held outside the repo.,Resident home
+Sacred Heart Elementary School,"421 Jasper St, Camden, NJ 08104",Elementary school near EMR's waterfront complex. Had to evacuate during Jan. 2021 fire. ,Sensitive receptor
+Neighborhood Center,"278 Kaighns Ave, Camden, NJ 08103","Nonprofit that hosts childcare center, afterschool program, etc. ",Sensitive receptor
+Center for Environmental Transformation,"1729 Ferry Ave, Camden, NJ 08104",Environmental nonprofit that sued EMR and NJ Department of Environmental Protection,Neighborhood asset / character
+Community garden,"415 Emerald St, Camden, NJ 08104",Garden run by Center for Environmental Transformation,Neighborhood asset
+Liney Ditch Park ,"Roughly 39.922204, -75.121782",Park where students at Sacred Heart Elementary School play,Neighborhood asset / sensitive receptor 
+Camden County Municipal Utilities Authority ,"1645 Ferry Ave, Camden, NJ 08104","Sewage treatment plant with a major air pollution permit, occasional source of odor in the neighborhood. Was almost damaged during Feb. 2025 fire. Hosts EPA air monitor. ",Industrial pollutor
+Joseph's House,"555 Atlantic Avenue Camden, NJ 08104",Homeless shelter,Sensitive receptor
+Camden FireWorks,"1813 Broadway, Camden, NJ 08104",Arts nonprofit that houses Hope Mead's pottery studio and the quilting circle that Felicia Biles attends,Neighborhood asset
+Golden Wok Chinese Restaurant,"1839 Broadway, Camden, NJ 08104",Restaurant where Christina Allen picked up food during Jan. 2021 fire. ,Neighborhood asset / plot point
+Porter's Daughters' Garden,"1920 Filmore St, Camden, NJ 08104",Pollinator garden created by Portia Simmons ,Neighborhood asset / character
+EMR 6th street ,"1500 S 6th St, Camden, NJ 08104","EMR's consumer-facing scrapyard where they purchase scrap from peddlers, contractors, etc. ",EMR
+Heart of Camden,"1840 Broadway, Camden, NJ 08104",Nonprofit that helped communicate emergency information to residents during some fires; director helped negotiate City's memorandum of understanding with EMR,Neighborhood asset / character
+EMR shredder,"1400 S. Front Street, Camden, NJ 08104","EMR's scrap metal shredding facility, where the bulk of the recent fires have occurred.",EMR
+My Auto Store,"1466 Ferry Ave, Camden, NJ 08104 (also ID'd as 100 Atlantic Ave.) ",,EMR
+Kaighn Avenue Facility,"1229 S. Front Street, Camden, NJ 08104",,EMR
+Pier Facility,"Roughly 39°56'09.6""N 75°07'43.1""W
+",,EMR
+Georgia-Pacific Gypsum,"1101 S Front St, Camden, NJ 08103","Gypsum manufacturing plant, holds a major air pollution permit ",Industrial pollutor
+Reworld ,"600 Morgan St, Camden, NJ 08104","Trash incinerator, holds a major air pollution permit",Industrial pollutor

@@ -1,0 +1,17 @@
+{
+  "output": "/mnt/o/Ode/Github/margin-2026/stories/new-jersey/output/hysplit_smoke_animated.html",
+  "sources": [
+    "NOAA ARL HYSPLIT trajectory model via READY (Stein et al., 2015)",
+    "Meteorological data: GDAS 1-degree archive",
+    "EMR facility location: 39.926374, -75.128614 (South Front St, Camden NJ)"
+  ],
+  "citation": "Stein, A.F., et al. (2015). NOAA's HYSPLIT Atmospheric Transport and Dispersion Modeling System. Bull. Amer. Meteor. Soc., 96, 2059-2077.",
+  "usage": "HYSPLIT results from ARCHIVE data \u2014 redistribution permitted per NOAA ARL agreement",
+  "encoding": {
+    "time": "Interactive slider \u2014 scrub through hours to watch plume expand",
+    "color": "Altitude band (red=surface <60m, orange=mid 60-120m, yellow=upper >120m)",
+    "point_size": "Altitude (larger=closer to ground)"
+  },
+  "date": "2025-02-21",
+  "location": "Camden, NJ"
+}

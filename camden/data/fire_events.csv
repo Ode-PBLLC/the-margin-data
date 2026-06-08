@@ -1,0 +1,16 @@
+date,is_major,ignition_local,evacuations,source,notes
+2020-02-18,false,,,user,
+2020-11-29,false,,,user,
+2021-01-29,true,2021-01-29T04:30,Sacred Heart School and roughly 30 families evacuated,user+sophia,major fire; start time per Sophia notable_fires.csv (rough)
+2021-02-27,false,,,user,
+2022-02-28,false,,,user,
+2022-07-21,false,,,user,part of 7/21-7/22 incident
+2022-07-22,false,,,user,part of 7/21-7/22 incident
+2022-10-18,false,2022-10-18T18:30,"Some residents evacuated (number unknown), EMR paid for hotel rooms",user+sophia,start time per Sophia notable_fires.csv (rough)
+2024-07-29,false,,,user,
+2025-02-21,true,2025-02-21T17:00,Roughly 100 people/households evacuated to EMR-paid hotel rooms,user+sophia,major fire; start time per Sophia notable_fires.csv (rough)
+2025-08-12,false,,,user,
+2025-10-17,false,,,user,
+2026-02-26,false,,,user,
+2026-03-10,false,2026-03-10T17:00,,user,ignited ~5 PM EDT
+2026-05-29,false,2026-05-29T02:00,,sophia,"Fri 5/29/26 fire; started ~2 AM, authorities notified 2:54 AM (per Sophia); county hazmat mobile monitoring showed elevated PM in Waterfront South per PIO (data pending); Sophia wants 6:30 AM plume snapshot"

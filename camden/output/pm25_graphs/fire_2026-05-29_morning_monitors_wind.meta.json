@@ -1,0 +1,8 @@
+{
+ "description": "5/29/26 fire morning: hourly regulatory PM2.5 + PHL wind direction, 6:30am marked.",
+ "sources": [
+  "EPA AirNow public hourly data files, 2026-05-29 (GMT\u2192EDT)",
+  "PHL ASOS (NWS/FAA) via Iowa Environmental Mesonet"
+ ],
+ "built_by": "camden/scripts/build_pm25_graphs.py"
+}

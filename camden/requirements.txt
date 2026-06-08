@@ -1,0 +1,11 @@
+# Camden EMR analysis — Python deps (tested on Python 3.11)
+pandas
+numpy
+geopandas
+shapely
+folium
+matplotlib
+openpyxl   # pandas .xlsx reader, used by plot_air_quality.py
+contourpy  # footprint contour extraction in build_hysplit_footprint.py
+pyarrow    # parquet reader for the corrected PurpleAir data (build_hysplit_still/animation.py)
+requests   # NOAA ARL met download in run_hysplit.py

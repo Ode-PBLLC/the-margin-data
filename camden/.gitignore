@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+
+# HYSPLIT met archive — ~3.4 GB per 6-hour HRRR chunk, re-downloaded by
+# run_hysplit.py from the NOAA ARL archive. Never commit.
+tools/hysplit/met/
+
+# Generated maps from the build_hysplit_* scripts (rebuilt from committed inputs).
+figures/
